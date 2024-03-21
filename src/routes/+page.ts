@@ -15,7 +15,7 @@ export const load = (async ({ fetch, url }) => {
 	const generationId = url.searchParams.get('generation-id') || '1';
 	let monsterList = [];
 	if (generationId == 'all') {
-		const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
+		const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=2000');
 		const json = await response.json();
 		monsterList = json.results;
 	} else {
