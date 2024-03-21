@@ -41,7 +41,7 @@
 <div class="flex flex-row flex-wrap justify-center">
 	<button
 		class="generation-button"
-		class:active={seletctedGenerationId === 'all'}
+		class:active={seletctedGenerationId == 'all' || seletctedGenerationId == ''}
 		on:click={() => updateSearchParams('generation-id', 'all')}
 		>All
 	</button>
@@ -56,7 +56,10 @@
 	{/each}
 </div>
 
-<form on:submit|preventDefault={submitSearch} class="flex items-center justify-center my-4 flex-row gap-1">
+<form
+	on:submit|preventDefault={submitSearch}
+	class="flex items-center justify-center my-4 flex-row gap-1"
+>
 	<input
 		class="rounded-[5px] w-[200px] px-2 py-1 border-2 border-black"
 		type="text"
@@ -70,8 +73,8 @@
 	/>
 </form>
 <div class="flex flex-row flex-wrap justify-center">
-	{#each selectedMonsters as monster,index (monster.id)}
-		<Monster {monster} {index}/>
+	{#each selectedMonsters as monster, index (monster.id)}
+		<Monster {monster} {index} />
 	{/each}
 </div>
 
