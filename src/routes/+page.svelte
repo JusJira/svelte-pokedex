@@ -71,7 +71,7 @@
 </form>
 <div class="flex flex-row flex-wrap justify-center">
 	{#each selectedMonsters as monster (monster.id)}
-		<Monster {monster} {updateSearchParams} isInteractive />
+		<Monster {monster} />
 	{/each}
 </div>
 

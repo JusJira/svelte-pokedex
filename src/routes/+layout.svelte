@@ -2,6 +2,8 @@
 	import '../app.css';
 
 	import { page } from '$app/stores';
+
+    import {caughtMonsters} from '$lib/stores';
 </script>
 
 <div class="flex flex-row justify-between items-center bg-neutral-800 text-white h-12 px-10">
@@ -11,7 +13,7 @@
 		class:active={$page.url.pathname === '/my-monsters'}
 		href="/my-monsters"
 	>
-		My Monsters
+		My Monsters ({$caughtMonsters.length})
 	</a>
 </div>
 
