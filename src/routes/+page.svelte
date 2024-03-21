@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { generations } from './generations';
-	import type { IndexMonster } from './+page';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import Monster from './Monster.svelte';
@@ -25,7 +24,7 @@
 	$: monsterId2 = $page.url.searchParams.get('monsterId2') || '';
 	$: monster2 = data.monsters.find((monster) => monster.id === monsterId2);
 
-	$: seletctedGenerationId = $page.url.searchParams.get('generation-id') || '';
+	$: selectedGenerationId = $page.url.searchParams.get('generation-id') || '';
 
 	const updateSearchParams = (key: string, value: string) => {
 		const searchParams = new URLSearchParams($page.url.searchParams);
@@ -41,14 +40,14 @@
 <div class="flex flex-row flex-wrap justify-center">
 	<button
 		class="generation-button"
-		class:active={seletctedGenerationId == 'all' || seletctedGenerationId == ''}
+		class:active={selectedGenerationId == 'all' || selectedGenerationId == ''}
 		on:click={() => updateSearchParams('generation-id', 'all')}
 		>All
 	</button>
 	{#each generations as generation (generation.id)}
 		<button
 			class="generation-button"
-			class:active={seletctedGenerationId === generation.id.toString()}
+			class:active={selectedGenerationId === generation.id.toString()}
 			on:click={() => updateSearchParams('generation-id', generation.id.toString())}
 		>
 			{generation.main_region}
