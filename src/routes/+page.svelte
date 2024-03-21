@@ -70,8 +70,8 @@
 	/>
 </form>
 <div class="flex flex-row flex-wrap justify-center">
-	{#each selectedMonsters as monster (monster.id)}
-		<Monster {monster} />
+	{#each selectedMonsters as monster,index (monster.id)}
+		<Monster {monster} {index}/>
 	{/each}
 </div>
 

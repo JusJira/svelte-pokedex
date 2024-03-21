@@ -8,6 +8,7 @@ type ApiMonster = {
 export type IndexMonster = ApiMonster & {
 	id: string;
 	image: string;
+    index: number;
 };
 
 export const load = (async ({ fetch, url }) => {
@@ -32,7 +33,7 @@ export const load = (async ({ fetch, url }) => {
 			name: monster.name,
 			url: monster.url,
 			id,
-			image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+			image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`,
 		};
 	});
 
