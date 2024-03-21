@@ -83,6 +83,6 @@
 		@apply bg-neutral-800 text-white !important;
 	}
 	.generation-button {
-		@apply m-[10px] px-[10px] py-[5px] bg-[#f9f9f9] text-[#333] border-[1px] border-black hover:bg-[#eee];
+		@apply m-[10px] px-[10px] py-[5px] bg-[#f9f9f9] text-[#333] border-[1px] border-black hover:bg-[#eee] rounded-md;
 	}
 </style>
